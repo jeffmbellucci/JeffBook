@@ -1,5 +1,7 @@
-<%=link_to 'Sign in', '#'%>
-
-<%=link_to 'Profile', '#'%>
+<% if logged_in? %>
+<%=link_to 'Profile', current_user%>
 <%=link_to 'Friends', '#'%>
-<%=link_to 'Log Out', '#'%>
+<%=link_to 'Log Out', sessions_url, method: 'delete'%>
+<% else %>
+<%=link_to 'Login', new_sessions_url%>
+<% end%>

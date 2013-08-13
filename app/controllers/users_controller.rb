@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  
+  before_filter :signed_in_user, only: [:show, :index, :destroy]
+  before_filter :correct_user, only: [:show, :index, :destroy]
   def new
     @user = User.new
     render :new
@@ -8,8 +9,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:success] = "Welcome to JeffBook"
-      # signin(@user)
+      flash[:success] = "Account created."
+      login(@user)
       redirect_to @user
     else
       render :new

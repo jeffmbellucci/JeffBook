@@ -8,7 +8,7 @@
 </head>
 <body>
 	<% flash.each do |key, val| %>
-		<%= "#{key.to_s.upcase}, #{val}" %>
+		<%= "#{key.to_s.upcase}! #{val}" %>
 	<% end %>
 	<br>
 	<%= render 'shared/header' %>

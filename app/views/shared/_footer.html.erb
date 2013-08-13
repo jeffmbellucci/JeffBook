@@ -1,2 +1,4 @@
-<%= link_to 'Create Account' , new_user_url%>
+<% unless logged_in?%>
+	<%= link_to 'Create Account' , new_user_url%>
+<% end %>
 <%= link_to 'Home', root_url%>
