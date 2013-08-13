@@ -1,0 +1,9 @@
+<br>
+<h1> Hello <%=@user.name%>, this is your page </h1>
+<br>
+<%=@user.about%>
+<br>
+<br>
+<%= link_to "Edit my info", '#'%>
+<%= link_to "Delete my account", user_url, method: "delete"%>
+<br>

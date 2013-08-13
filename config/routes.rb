@@ -1,6 +1,7 @@
 Jeffbook::Application.routes.draw do
+  resources :users 
+  resource :sessions, :only => [:new, :create, :destroy]
   root to: 'homepage#show'
-  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
